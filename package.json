@@ -1,0 +1,73 @@
+{
+  "name": "dsh-plugin-quick-invoke",
+  "version": "1.0.0",
+  "description": "Quick plugin invocation for DeepSeek Harness: an installed-plugin picker beside the composer, drag a plugin name into the prompt at the drop point, pin a draggable rail in the right sidebar, and choose which plugins appear (with optional remarks) in Settings.",
+  "icon": "icon.svg",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19",
+    "dsh": ">=0.2.1-rc.1"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "plugin",
+    "quick-invoke",
+    "composer",
+    "drag-and-drop"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    },
+    "compatibility": {
+      "dsh": ">=0.2.1-rc.1",
+      "dshReleases": {
+        "0.2.1-rc.1": "compatible",
+        "0.2.1-rc.2": "compatible"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thyxqz/dsh-plugin-quick-invoke.git"
+  },
+  "homepage": "https://github.com/Thyxqz/dsh-plugin-quick-invoke",
+  "bugs": {
+    "url": "https://github.com/Thyxqz/dsh-plugin-quick-invoke/issues"
+  }
+}

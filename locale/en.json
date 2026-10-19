@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Plugin Quick Invoke",
+    "description": "An installed-plugin picker beside the workspace and mode controls above the composer: drag a plugin name into the prompt at the drop point, double-click to pin a draggable rail in the right sidebar, and choose which plugins appear (with an optional remark) in Settings."
+  }
+}

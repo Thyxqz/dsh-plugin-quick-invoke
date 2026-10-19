@@ -1,0 +1,6 @@
+# Bundle patch layer: one Host row that loads the package entry as a plain
+# Cordis plugin. The `dsh.client` declaration in package.json makes the Web app
+# load ./client.js as the browser half (trigger, picker, right rail, settings).
+- insert:
+    - id: plugin-quick-invoke
+      name: 'dsh-plugin-quick-invoke'
