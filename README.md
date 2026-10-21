@@ -24,17 +24,21 @@
 
 ## 安装
 
-在 DSH 里通过插件管理器安装 npm 包：
+插件目前从 GitHub 源码安装（npm 包尚未发布）：
 
-1. 打开 `插件` 页面 → 添加插件，输入 `dsh-plugin-quick-invoke`；
-2. 或让 DSH 里的 Agent 调用 `plugin_manager` 的 `install_bundle`，`target` 写 `dsh-plugin-quick-invoke`；
-3. 或手动装进 profile 后把 bundle 加进 `dsh.profile.bundles`：
+1. 在 DSH 的 `插件` 页面 → 添加插件，输入 GitHub 地址：
+   `Thyxqz/dsh-plugin-quick-invoke`（或完整地址 `https://github.com/Thyxqz/dsh-plugin-quick-invoke`）；
+2. 或让 DSH 里的 Agent 调用 `plugin_manager` 的 `install_bundle`，`target` 写
+   `github:Thyxqz/dsh-plugin-quick-invoke`；
+3. 或命令行装进 profile：
 
 ```bash
-pnpm add dsh-plugin-quick-invoke
+dsh plugin --profile <profile> add github:Thyxqz/dsh-plugin-quick-invoke
 ```
 
-安装后如界面未立即出现，刷新一次 Web 页面（Desktop 窗口按 `Ctrl+R`）。
+仓库根目录已包含 `package.json` 和 `cordis.patch.yml`，可直接作为 bundle 安装（无需构建步骤）。安装后如界面未立即出现，刷新一次 Web 页面（Desktop 窗口按 `Ctrl+R`）。
+
+> npm 包 `dsh-plugin-quick-invoke` 尚未发布；发布后会补充按包名安装的方式。
 
 ## 使用
 
